@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Comparison Bar Chart</title>
+	<script src="//code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="barChart.js"></script>
+</head>
+<script type="text/javascript">
+$(function(){
+	var data = [
+	['Name', 'Target', 'Current'],
+	['First' , 5, 4],
+	['Sec' , 4, 3],
+	['Third' , 3, 0]
+	];
+	var options = {
+		/*
+		'ruleHeight' : '80px',
+		'ruleBorder' : '#000000',
+		'ruleInnerBorder' : '#335566',
+		'maxStep' : 5,
+		'parentBar' : '#778878',
+		'chieldBar' : '#456655'
+		*/
+
+	};
+
+	renderBarChart('chart',data,options);	
+});
+
+</script>
+<body>
+<div id="chart" style="width:30%;"></div>
+</body>
+</html>
