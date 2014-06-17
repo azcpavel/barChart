@@ -9,6 +9,8 @@
 */
 function renderBarChart(element_id,data,options) {
 
+	var rand = Math.floor((Math.random() * 10000) + 1);
+
 	/********Default Options*********/
 	options.ruleHeight 		= typeof options.ruleHeight 		!== 'undefined' ? options.ruleHeight 		: '80px';
 	options.ruleBorder 		= typeof options.ruleBorder 		!== 'undefined' ? options.ruleBorder 		: '#000000';
@@ -20,8 +22,8 @@ function renderBarChart(element_id,data,options) {
 	options.captions 		= typeof options.captions 			!== 'undefined' ? options.captions 			: 'Figure: Comparison Bar Chart of '+data[0][2]+' with '+data[0][1];
 
    	
-	$('#'+element_id).append('<div id="renderChart" style="width:100%;display:table;"></div>');
-	$('#renderChart').append('<div style="width:100%;text-align:center;margin-bottom:20px;">'+
+	$('#'+element_id).append('<div id="renderChart'+rand+'" style="width:100%;display:table;"></div>');
+	$('#renderChart'+rand).append('<div style="width:100%;text-align:center;margin-bottom:20px;">'+
 								'<span style="color:'+options.parentBar+';background:'+options.parentBar+';">....</span> ' +
 								'<span style="color:#000;">'+data[0][1]+'</span> '+
 								'<span style="margin-left:20px;color:'+options.chieldBar+';background:'+options.chieldBar+';height:5px;">....</span> '+
@@ -29,7 +31,7 @@ function renderBarChart(element_id,data,options) {
 							'</div>')
 	for (var i = 1; i < data.length; i++) {
 
-		$('#renderChart').append(
+		$('#renderChart'+rand).append(
 				'<div style="display:table-row;">'+
 					'<div style="width:20%;float:left;margin:5px 0;color:'+options.labelColor+';display:table-cell">'+data[i][0]+'</div>'+ 
 					'<div style="width:80%;float:left;margin:5px 0;display:table-cell">'+
@@ -40,23 +42,23 @@ function renderBarChart(element_id,data,options) {
 	};
 
 	$('#'+element_id).append(
-		'<div id="renderChartRule" style="margin:-22% 0 0 19.8%;height:'+options.ruleHeight+';border-left:1px solid '+options.ruleBorder+';border-bottom:1px solid '+options.ruleBorder+';">'+			
+		'<div id="renderChartRule'+rand+'" style="margin:-22% 0 0 19.8%;height:'+options.ruleHeight+';border-left:1px solid '+options.ruleBorder+';border-bottom:1px solid '+options.ruleBorder+';">'+			
 		'</div>'
 		);
 
 	for (var i = 1; i <= options.maxStep; i++) {
-		$('#renderChartRule').append(
+		$('#renderChartRule'+rand).append(
 			'<div style="z-index:-1000;height:'+options.ruleHeight+';width:'+(100 / (options.maxStep))+'%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-o-box-sizing: border-box;box-sizing: border-box;border-right:1px solid '+options.ruleInnerBorder+';float:left;"></div>'
 			);
 	};
 
 	for (var i = 0; i < options.maxStep; i++) {
 		if(i != options.maxStep-1)
-			$('#renderChartRule').append(
+			$('#renderChartRule'+rand).append(
 				'<div style="height:15px;width:'+(100 / options.maxStep)+'%;float:left;">'+i+'</div>'
 				);
 		else
-			$('#renderChartRule').append(
+			$('#renderChartRule'+rand).append(
 				'<div style="height:15px;width:'+(100 / options.maxStep)+'%;float:left;">'+i+'<div style="position:relative;float:right">'+(i + 1)+'</div></div>'
 				);
 	};
