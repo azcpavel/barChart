@@ -12,7 +12,7 @@ function renderBarChart(element_id,data,options) {
 	var rand = Math.floor((Math.random() * 10000) + 1);
 
 	/********Default Options*********/
-	options.ruleHeight 		= typeof options.ruleHeight 		!== 'undefined' ? options.ruleHeight 		: '80px';
+	options.ruleHeight 		= typeof options.ruleHeight 		!== 'undefined' ? options.ruleHeight 		: '100px';
 	options.ruleBorder 		= typeof options.ruleBorder 		!== 'undefined' ? options.ruleBorder 		: '#000000';
 	options.ruleInnerBorder = typeof options.ruleInnerBorder 	!== 'undefined' ? options.ruleInnerBorder 	: '#335566';
 	options.maxStep 		= typeof options.maxStep 			!== 'undefined' ? options.maxStep 			: 5;
