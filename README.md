@@ -4,4 +4,7 @@ barChart
 Comparison Bar Chart, Bar Chart, Simple Bar Chart
 
 
-Simple Bar chart just include jQuery js and call function on load
+#Develop By
+#Ahsan Zahid Chowdhury
+#azc.pavel@gmail.com
+#+880-1534-302690
