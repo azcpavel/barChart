@@ -10,6 +10,7 @@ Simple Bar chart just include jQuery js and call function on load
 
 $(function(){
 	var data = [
+	['Name', 'Target', 'Current'],
 	['First' , 5, 4],
 	['Sec' , 4, 3],
 	['Third' , 3, 0]
