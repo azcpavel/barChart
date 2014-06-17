@@ -16,6 +16,7 @@ function renderBarChart(element_id,data,options) {
 	options.maxStep 		= typeof options.maxStep 			!== 'undefined' ? options.maxStep 			: 5;
 	options.parentBar 		= typeof options.parentBar 			!== 'undefined' ? options.parentBar 		: '#778878';
 	options.chieldBar 		= typeof options.chieldBar 			!== 'undefined' ? options.chieldBar 		: '#456655';
+	options.captions 		= typeof options.captions 			!== 'undefined' ? options.captions 			: 'Figure: Comparison Bar Chart of '+data[0][2]+' with '+data[0][1];
 
    	
 	$('#'+element_id).append('<div id="renderChart" style="width:100%;display:table;"></div>');
@@ -57,6 +58,8 @@ function renderBarChart(element_id,data,options) {
 			$('#renderChartRule').append(
 				'<div style="height:15px;width:'+(100 / options.maxStep)+'%;float:left;">'+i+'<div style="position:relative;float:right">'+(i + 1)+'</div></div>'
 				);
-	};	
+	};
+
+	$('#'+element_id).append('<div style="width:100%;text-align:center;margin-top:30px;">'+options.captions+'</div>');	
 
 }
