@@ -19,7 +19,13 @@ function renderBarChart(element_id,data,options) {
 
    	
 	$('#'+element_id).append('<div id="renderChart" style="width:100%;display:table;"></div>');
-	for (var i = 0; i < data.length; i++) {
+	$('#renderChart').append('<div style="width:100%;text-align:center;margin-bottom:20px;">'+
+								'<span style="color:'+options.parentBar+';background:'+options.parentBar+';">....</span> ' +
+								'<span style="color:#000;">'+data[0][1]+'</span> '+
+								'<span style="margin-left:20px;color:'+options.chieldBar+';background:'+options.chieldBar+';height:5px;">....</span> '+
+								'<span style="color:#000;">'+data[0][2]+'</span> '+
+							'</div>')
+	for (var i = 1; i < data.length; i++) {
 
 		$('#renderChart').append(
 				'<div style="display:table-row;">'+
@@ -28,7 +34,7 @@ function renderBarChart(element_id,data,options) {
 						'<div style="width:'+(data[i][1] * (100 / (options.maxStep)))+'%;height:20px;background:'+options.parentBar+';"> <div style="width:'+(data[i][2] * 100 / data[i][1])+'%;height:20px;background:'+options.chieldBar+';"></div></div>'+
 					'</div>'+
 				'</div>');
-			
+
 	};
 
 	$('#'+element_id).append(
@@ -52,5 +58,5 @@ function renderBarChart(element_id,data,options) {
 				'<div style="height:15px;width:'+(100 / options.maxStep)+'%;float:left;">'+i+'<div style="position:relative;float:right">'+(i + 1)+'</div></div>'
 				);
 	};	
-	
+
 }
