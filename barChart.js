@@ -16,6 +16,7 @@ function renderBarChart(element_id,data,options) {
 	options.maxStep 		= typeof options.maxStep 			!== 'undefined' ? options.maxStep 			: 5;
 	options.parentBar 		= typeof options.parentBar 			!== 'undefined' ? options.parentBar 		: '#778878';
 	options.chieldBar 		= typeof options.chieldBar 			!== 'undefined' ? options.chieldBar 		: '#456655';
+	options.labelColor 		= typeof options.labelColor 		!== 'undefined' ? options.labelColor 		: '#000000';
 	options.captions 		= typeof options.captions 			!== 'undefined' ? options.captions 			: 'Figure: Comparison Bar Chart of '+data[0][2]+' with '+data[0][1];
 
    	
@@ -30,7 +31,7 @@ function renderBarChart(element_id,data,options) {
 
 		$('#renderChart').append(
 				'<div style="display:table-row;">'+
-					'<div style="width:20%;float:left;margin:5px 0;display:table-cell">'+data[i][0]+'</div>'+ 
+					'<div style="width:20%;float:left;margin:5px 0;color:'+options.labelColor+';display:table-cell">'+data[i][0]+'</div>'+ 
 					'<div style="width:80%;float:left;margin:5px 0;display:table-cell">'+
 						'<div style="width:'+(data[i][1] * (100 / (options.maxStep)))+'%;height:20px;background:'+options.parentBar+';"> <div style="width:'+(data[i][2] * 100 / data[i][1])+'%;height:20px;background:'+options.chieldBar+';"></div></div>'+
 					'</div>'+
