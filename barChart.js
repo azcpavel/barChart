@@ -3,6 +3,7 @@
 *	@2014-06-16
 *	@+880 1677 533818
 *	@Comparison Bar Chart
+*	@https://github.com/azcpavel/barChart
 *	@1.0.1
 *
 */
