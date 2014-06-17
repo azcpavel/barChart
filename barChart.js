@@ -40,7 +40,7 @@ function renderBarChart(element_id,data,options) {
 	};
 
 	$('#'+element_id).append(
-		'<div id="renderChartRule" style="margin:-22% 0 0 20%;height:'+options.ruleHeight+';border-left:1px solid '+options.ruleBorder+';border-bottom:1px solid '+options.ruleBorder+';">'+			
+		'<div id="renderChartRule" style="margin:-22% 0 0 19.8%;height:'+options.ruleHeight+';border-left:1px solid '+options.ruleBorder+';border-bottom:1px solid '+options.ruleBorder+';">'+			
 		'</div>'
 		);
 
